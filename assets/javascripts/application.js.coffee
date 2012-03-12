@@ -71,7 +71,7 @@ $ ->
 
     home: ->
       view = new ChannelView(model: @channel, collection: @blocks)
-      $("#container").html(view.render().$el)
+      $("#render").html(view.render().$el)
       console.log('view', view)
 
   #
