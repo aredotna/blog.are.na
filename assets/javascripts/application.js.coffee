@@ -77,11 +77,11 @@ $ ->
   #
   # Init:
   #
-  $('#container').addClass('loading')
+  $('#render').addClass('loading')
   url = "http://are.na/api/v1/channels/blog-are-na.json"
   $.getJSON "#{url}?callback=?", (data) ->
     console.log(data)
-    $('#container').removeClass('loading')
+    $('#render').removeClass('loading')
     window.Channel = new Channel(data)
     App = new Blog()
     Backbone.history.start()

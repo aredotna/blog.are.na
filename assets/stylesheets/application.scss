@@ -1,0 +1,12 @@
+@import 'reset';
+
+body {
+  
+}
+
+#render {
+  min-height: 100px;
+  &.loading {
+    background: transparent url(load.gif) 20px 20px no-repeat;
+  }
+}
