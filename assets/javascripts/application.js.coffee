@@ -1,6 +1,7 @@
 #= require 'vendor/json2.js'
 #= require 'vendor/underscore.js'
 #= require 'vendor/backbone.js'
+#= require 'vendor/relativetime.js'
 
 $ ->
   # 
@@ -39,7 +40,10 @@ $ ->
   class Block extends Backbone.Model
     initialize: ->
       @channel = window.Channel
-      @set('current_connection', @channelConnection())
+      @set
+        current_connection: @channelConnection()
+        relative_date: new Date(@channelConnection().updated_at).toRelativeTime()
+
       console.log(@)
 
     channelConnection: () => 
