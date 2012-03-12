@@ -1,5 +1,6 @@
 <% _.each(collection, function(block) { %>
   <li class="block">
+    <h2><%= block.title %></h2>
     <% if (block.block_type === "Text") { %>
       <div class="text">
         <div class="content">
