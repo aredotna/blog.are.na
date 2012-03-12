@@ -45,6 +45,11 @@ a, a:visited {
    color: $link-hover-color; 
   }
 }
+blockquote {
+  margin: 0;
+  padding-left: $base-line-height;
+  border-left: 2px solid;
+}
 footer {
   position: fixed;
   bottom: 0;
@@ -74,6 +79,7 @@ footer {
       max-width: 600px;
       margin: $base-line-height*4 0;
       img {
+        margin: $base-line-height 0;
         max-width: 100%;
       }
       // TYPES
@@ -83,7 +89,6 @@ footer {
       }
       .image {
         position: relative;
-        text-align: center;
         &:hover {
           .metadata {
             visibility: visible;
@@ -99,6 +104,8 @@ footer {
       // META
       // ----
       .meta {
+        text-align: center;
+        color: #999;
         font-family: $font-family-sans;
         margin: $base-line-height 0;
       }
