@@ -34,6 +34,11 @@ class App < Sinatra::Base
   
   set :haml, :format => :html5
   
+  get '/rss' do
+    content_type 'application/rss+xml'
+    haml :rss, :format => :xhtml, :escape_html => true, :layout => false
+  end
+
   get "/" do
     haml :index
   end
