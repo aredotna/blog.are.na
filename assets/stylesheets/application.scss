@@ -1,7 +1,65 @@
 @import 'reset';
 
+$font-color:                #111;
+$font-family:               sans-serif;
+$base-font-size:            18px;
+$base-line-height:          18px;
+$link-color:                #08c;
+$link-background-color:     #ff9;
+$link-hover-color:          #08c;
+$link-focus-color:          false;
+$link-active-color:         false;
+$link-visited-color:        false;
+
+// BASE
+// ----
 body {
-  
+  font-family: $font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $font-color;
+  text-shadow: #fff 0px 1px 1px;
+}
+a, a:visited {
+  color: $link-color;
+  background-color: $link-background-color;
+  text-decoration: none;
+  &:hover {
+   color: $link-hover-color; 
+  }
+}
+ul { 
+  list-style-type: none;
+  li {
+  }
+}
+ul, hr { margin: $base-line-height*4 0; }
+p { margin: $base-line-height 0; }
+
+footer {
+  text-align: right;
+  padding: $base-line-height;
+}
+
+// STRUCTURE
+// ---------
+
+// CHANNEL
+// -------
+.channel {
+  margin: 0;
+  .block {
+    max-width: 600px;
+    margin: $base-line-height*4 0;
+    .image {
+      position: relative;
+      &:hover {
+        .metadata {
+          visibility: visible;
+        }
+      }
+    }
+  }
 }
 
 #render {
