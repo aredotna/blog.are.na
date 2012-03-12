@@ -11,23 +11,31 @@
 
     <% if (block.block_type === "Link") { %>
       <div class="link">
-        <div class="content">
-          <% if(block.image_display){ %>
-            <a href="<%= block.link_url %>" class="external" target="_blank">
-              <img src="<%= block.image_display%>" alt="<%= block.title%>" />
-            </a>
-          <% } %>
-          <p><a href="<%= block.link_url%>" class="url external" target="_blank"><%= block.link_url%></a></p>
+        <% if(block.image_display){ %>
+          <a href="<%= block.link_url %>" class="external" target="_blank">
+            <img src="<%= block.image_display%>" alt="<%= block.title%>" />
+          </a>
+        <% } %>
+        <p><a href="<%= block.link_url%>" class="url external" target="_blank"><%= block.link_url%></a></p>
+        
+        <div class="metadata">
+          <div class="content">
+            <%= block.content %>
+          </div>
         </div>
+          
       </div>
     <% } %>
 
     <% if (block.block_type === "Media") { %>
       <div class="media">
-        <div class="content">
-          <% if(block.embed_html){ %>
-            <%= block.embed_html %>
-          <% } %>
+        <% if(block.embed_html){ %>
+          <%= block.embed_html %>
+        <% } %>
+        <div class="metadata">
+          <div class="content">
+            <%= block.content %>
+          </div>
         </div>
       </div>
     <% } %>
