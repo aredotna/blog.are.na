@@ -39,6 +39,8 @@ $ ->
   class Block extends Backbone.Model
     initialize: ->
       @channel = window.Channel
+      @set('current_connection', @channelConnection())
+      console.log(@)
 
     channelConnection: () => 
       _.find(@get('connections'), (connection) =>
