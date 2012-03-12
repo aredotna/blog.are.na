@@ -1,4 +1,3 @@
 ## About
 
-Structure derived from 'Sinatra-DataMapper-Template'
-
+It's a blog! About are.na, by are.na, running on are.na.
