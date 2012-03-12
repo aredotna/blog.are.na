@@ -46,12 +46,12 @@
         <% } %>
       </div>
     <% } %>
+    
+    <div class="meta">
+      <span>Originally created by <%= block.username %></span>
+      <span>Connected by <%= block.current_connection.username %></span>
+      <span>Connected at <%= block.current_connection.created_at %></span>
+    </div>
 
-
-    <dl class="meta">
-      <dt>Originally created by</dt> <dd><%= block.username %></dd>
-      <dt>Connected by</dt> <dd><%= block.current_connection.username %></dd>
-      <dt>Connected at</dt> <dd><%= block.current_connection.created_at %></dd>
-    </dl>
   </li>
 <% }); %>
