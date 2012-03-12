@@ -55,12 +55,15 @@
       </div>
     <% } %>
     
-    <div class="meta">
+    <div class="meta small">
       <span>Originally created by <%= block.username %></span>
+      <span class="meta-sep">|</span>
       <% if(block.user_id != block.current_connection.user_id){%>
         <span>Connected by <%= block.current_connection.username %></span>
+        <span class="meta-sep">|</span>
       <% } %>
       <span>Connected <%= block.relative_date %></span>
     </div>
+
   </li>
 <% }); %>

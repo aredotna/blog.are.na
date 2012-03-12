@@ -15,8 +15,8 @@
 $font-color:                #111;
 $font-family-serif:         'DTLHaarlemmerDRegular', serif;
 $font-family-sans:          sans-serif;
-$base-font-size:            20px;
-$base-line-height:          20px;
+$base-font-size:            18px;
+$base-line-height:          22px;
 $link-color:                #08c;
 $link-background-color:     #ff9;
 $link-hover-color:          #08c;
@@ -28,12 +28,15 @@ $link-visited-color:        false;
 // ----
 body {
   font-family: $font-family-serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 h1,h2,h3,h4,h5,strong,b {
   font-family: $font-family-sans;
   text-shadow: 0 1px 1px #fff;
 }
 h1,h2,h3,h4,h5 {
+  font-size: $base-font-size;
   text-align: center;
 }
 a, a:visited {
@@ -98,14 +101,20 @@ footer {
       .meta {
         font-family: $font-family-sans;
         margin: $base-line-height 0;
-        span {
-          padding-right: $base-line-height;
-
-        }
       }
-
     }
   }
+}
+
+// HELPER
+// ------
+.meta-sep {
+  color: #ccc;
+  margin: 0 $base-line-height/4;
+}
+.small {
+  font-size: $base-font-size - 6;
+  line-height: $base-line-height - 6;
 }
 
 /* ==|== media queries ======================================================
