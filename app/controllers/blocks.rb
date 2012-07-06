@@ -1,16 +1,11 @@
-Jtt.controllers :blocks do
+Jtt.controllers :blocks, :parent => :channels do
 
-  get :show, :map => '/show/:id' do
-    data = ActiveSupport::JSON.decode(
-        RestClient.get("http://are.na/api/v1/channels/studio-public", { :accept => :json })
-      )
-    
-    @channels = data['channels']
-    @blocks   = data['blocks']
-    
-    @block    = ActiveSupport::JSON.decode(
-        RestClient.get("http://are.na/api/v1/blocks/#{params[:id]}", { :accept => :json })
-      )
+  get :show, :with => :id do
+    @channel  = Arena.channel(params[:channel_id])
+    @channels = @channel['channels']
+    @blocks   = @channel['blocks']
+
+    @block    = Arena.block(params[:id])
 
     render "blocks/show"
   end

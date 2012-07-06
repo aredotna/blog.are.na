@@ -2,5 +2,8 @@
   = link_to 'X', '#', :id => 'toggle'
   
   %ul.list
+    - channels.each do |channel|
+      %li= link_to channel['title'], url_for(:channels, :show, :id => channel['id']), :class => 'channel'
+
     - blocks.each do |block|
-      %li= link_to block['generated_title'], url_for(:blocks, :show, :id => block['id'])
+      %li= link_to block['generated_title'], url_for(:blocks, :show, :channel_id => @channel, :id => block['id']), :class => 'block'
