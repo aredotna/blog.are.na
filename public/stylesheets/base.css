@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ccc;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+iframe, embed, object {
+  border: none;
+  margin: 0;
+  width: 100%;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+#toggle {
+  display: block;
+  text-align: right; }
+
+#navigation {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 20px; }
+  #navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #navigation ul li {
+      margin: 0 20px 20px 0; }

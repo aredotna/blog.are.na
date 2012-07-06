@@ -1,8 +1,1 @@
-%p
-  - @channels.each do |channel|
-    .channel= channel['slug']
-
-%p
-  - @blocks.each do |block|
-    .block
-      = link_to block['generated_title'], url_for(:blocks, :show, :id => block['id'])
+= render 'layouts/navigation', :locals => { :channels => @channels, :blocks => @blocks }

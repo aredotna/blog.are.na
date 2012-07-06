@@ -1,0 +1,10 @@
+%html
+  %head
+    = stylesheet_link_tag "base"
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+  %body
+    %nav#navigation
+      = yield_content :navigation
+    
+    %section#main
+      = yield_content :main
