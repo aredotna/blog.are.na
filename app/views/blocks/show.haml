@@ -1,4 +1,4 @@
 = partial 'layouts/navigation', :locals => { :channels => @channels, :blocks => @blocks }
 
 - content_for :main do
-  = render_partial "representations/#{@block['block_type'].downcase}", :locals => { "#{@block['block_type'].downcase}".to_sym => @block }
+  = partial "representations/#{@block['block_type'].downcase}", :locals => { "#{@block['block_type'].downcase}".to_sym => @block }
