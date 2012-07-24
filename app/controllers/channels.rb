@@ -1,10 +1,4 @@
 Jtt.controllers :channels do
-  DEFAULT_CHANNEL_IDENTIFIER = 'studio-public'
-
-  before do
-    # ...
-  end
-
   get :index, :map => "/"  do
     @channel  = Arena::Client.channel(DEFAULT_CHANNEL_IDENTIFIER)
     @channels = get_public_channels(@channel)

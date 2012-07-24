@@ -11,7 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #eee;
   color: $magenta;
   font-family: $sans;
   font-size: $font-size;
@@ -23,6 +23,17 @@ body {
 a {
   text-decoration: none;
   color: $green;
+}
+
+object, embed, iframe, img {
+  margin: 0;
+  vertical-align: bottom;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: $unit;
+  border-left: 2px solid;
 }
 
 // STRUCTURE
@@ -44,17 +55,24 @@ a {
   left: 0;
   padding: 0;
   z-index: 100;
-  background: #999;
+  background: $magenta;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  font-size: 0;
 
   a {
     display: inline-block;
     padding: $unit;
     color: #fff;
+    font-size: $font-size;
     font-weight: bold;
 
     &:hover {
       text-decoration: underline;
+      background-color: $green;
+    }
+
+    &.home {
+      background-color: $green;
     }
   }
 }
@@ -62,11 +80,12 @@ a {
 .thumbs {
   width: 100%;
   font-size: 0;
+  text-align: center;
 
   .thumb {
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     position: relative;
     vertical-align: top;
 
@@ -106,11 +125,6 @@ a {
       width: 75%;
       height: inherit;
       margin: $unit*2 auto;
-      font-family: $serif;
-      font-size: $font-size + 2;
-      line-height: $unit + 2;
-      text-align: left;
-      -webkit-font-smoothing: subpixel-antialiased;
     }
 
     &.media:after {
@@ -127,5 +141,63 @@ a {
       border-bottom: 10px solid transparent;
       border-left: 16px solid $green;
     }
+  }
+}
+
+.metadata {
+  margin: $unit 0;
+}
+
+.title {
+  margin: $unit 0;
+  font-weight: bold;
+}
+
+// General text formating
+.text, .description {
+  font-family: $serif;
+  font-size: $font-size + 2;
+  line-height: $unit + 2;
+  text-align: left;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.description {
+  width: 75%;
+}
+
+.source {
+  margin: $unit 0;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+// Inline and block code styles
+code,
+pre {
+  font-family: monospace;
+  font-size: $font-size - 2;
+  line-height: $unit - 5;
+}
+
+pre {
+  display: block;
+  padding: $unit;
+  margin: $unit 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0,0,0,.15);
+
+  code {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
   }
 }

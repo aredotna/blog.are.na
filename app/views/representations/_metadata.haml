@@ -3,3 +3,6 @@
 
 - if block['description']
   .description= block['description']
+
+- if block['source_url']
+  .source= link_to block['source_url'], block['source_url'], :target => '_blank'
