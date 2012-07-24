@@ -52,6 +52,10 @@ blockquote {
       height: 100%;
       width: 100%;
       vertical-align: middle;
+
+      &.sun_1 { background: transparent url('sun_01.png') center center no-repeat; background-attachment: fixed; }
+      &.sun_2 { background: transparent url('sun_02.png') center center no-repeat; background-attachment: fixed; }
+      &.sun_3 { background: transparent url('sun_03.png') center center no-repeat; background-attachment: fixed; }
     }
   }
 }
@@ -105,7 +109,11 @@ blockquote {
     border: 2px solid transparent;
 
     &:hover {
-      border: 2px solid $green;
+      border-color: $green;
+    }
+
+    &:focus {
+      border-color: $magenta;
     }
 
     // Clickable area
