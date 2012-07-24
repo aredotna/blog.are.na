@@ -12,6 +12,7 @@ gem 'sass'
 gem 'haml'
 
 gem 'arena'
+gem 'encryptor'
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'

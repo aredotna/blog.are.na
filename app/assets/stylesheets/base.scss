@@ -172,8 +172,14 @@ blockquote {
   }
 }
 
+.representation.text {
+  width: 75%;
+  margin: auto;
+}
+
 .metadata {
-  margin: $unit 0;
+  width: 75%;
+  margin: $unit auto;
 }
 
 .title {
@@ -189,10 +195,6 @@ blockquote {
   line-height: $unit + 2;
   text-align: left;
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.description {
-  width: 75%;
 }
 
 .source {
@@ -230,3 +232,7 @@ pre {
     border: 0;
   }
 }
+
+// UTIL
+// ----
+.align-center { text-align: center; }
