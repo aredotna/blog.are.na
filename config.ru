@@ -7,3 +7,7 @@
 require File.expand_path("../config/boot.rb", __FILE__)
 
 run Padrino.application
+
+map '/assets' do
+  run Padrino::Assets.environment
+end

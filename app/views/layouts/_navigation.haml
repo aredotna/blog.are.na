@@ -1,9 +1,7 @@
 - content_for :navigation do
-  = link_to 'X', '#', :id => 'toggle'
-  
-  %ul.list
+  - if channels.size > 0
     - channels.each do |channel|
-      %li= link_to channel['title'], url_for(:channels, :show, :id => channel['id']), :class => 'channel'
-
-    - blocks.each do |block|
-      %li= link_to block['generated_title'], url_for(:blocks, :show, :channel_id => @channel, :id => block['id']), :class => 'block'
+      = link_to channel['title'], url_for(:channels, :show, :id => channel['slug']), :class => 'channel'
+  - else
+    = link_to 'Back', request.referrer, :class => 'back'
+  = link_to 'Home', url_for(:channels, :index), :class => 'home'

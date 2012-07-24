@@ -6,12 +6,12 @@ source :rubygems
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 
+gem 'padrino-assets'
+gem 'coffee-script'
 gem 'sass'
 gem 'haml'
 
-# For API access
-gem 'activesupport', :require => 'active_support'
-gem 'rest-client'
+gem 'arena'
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'

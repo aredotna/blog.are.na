@@ -1,0 +1,9 @@
+= partial 'layouts/navigation', :locals => { :channels => @channels }
+
+- content_for :main do
+  .thumbs
+    - @blocks.each do |block|
+      .thumb{ :class => block['block_type'].downcase }
+        = link_to url_for(:blocks, :show, :id => block['id']), :class => 'area' do
+          / Area
+        = partial "representations/thumbs/#{block['block_type'].downcase}", :locals => { "#{block['block_type'].downcase}".to_sym => block }
