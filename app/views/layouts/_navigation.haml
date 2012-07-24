@@ -1,7 +1,9 @@
 - content_for :navigation do
-  = link_to SITE_TITLE, url_for(:channels, :index), :class => 'home'
-  - if channels.size > 0
-    - channels.each do |channel|
-      = link_to channel['title'], url_for(:channels, :show, :id => channel['slug']), :class => 'channel'
-  - else
-    = link_to 'Back', request.referrer, :class => 'back'
+  .tk-franklin-gothic-urw
+    = link_to SITE_TITLE, url_for(:channels, :index), :class => 'home'
+    - if channels.size > 0
+      - channels.each do |channel|
+        = link_to channel['title'], url_for(:channels, :show, :id => channel['slug']), :class => 'channel'
+    - else
+      - if request.referrer
+        = link_to 'Back', request.referrer, :class => 'back'

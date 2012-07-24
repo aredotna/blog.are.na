@@ -39,7 +39,21 @@ blockquote {
 // STRUCTURE
 // ---------
 #container {
-  margin: $unit*4 $unit;
+  height: 100%;
+
+  #main {
+    padding: $unit*4 $unit;
+    height: 100%;
+    width: 100%;
+    display: table;
+
+    .middle {
+      display: table-cell;
+      height: 100%;
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
 }
 
 #toggle {
@@ -88,6 +102,11 @@ blockquote {
     height: 240px;
     position: relative;
     vertical-align: top;
+    border: 2px solid transparent;
+
+    &:hover {
+      border: 2px solid $green;
+    }
 
     // Clickable area
     .area {
@@ -125,6 +144,7 @@ blockquote {
       width: 75%;
       height: inherit;
       margin: $unit*2 auto;
+      padding: $unit;
     }
 
     &.media:after {
@@ -150,6 +170,7 @@ blockquote {
 
 .title {
   margin: $unit 0;
+  font-size: $font-size + 2;
   font-weight: bold;
 }
 

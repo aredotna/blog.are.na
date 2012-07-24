@@ -2,10 +2,14 @@
   %head
     = stylesheet_link_tag "application"
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    = javascript_include_tag "//use.typekit.net/bmy7ezc.js"
+    :javascript
+      try{Typekit.load();}catch(e){}
   %body
     #container
       %nav#navigation
         = yield_content :navigation
       
       %section#main
-        = yield_content :main
+        .middle
+          = yield_content :main
