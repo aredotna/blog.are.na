@@ -3,5 +3,3 @@
 - content_for :main do
   .representation{ :class => @block['block_type'].downcase }
     = partial "representations/full/#{@block['block_type'].downcase}", :locals => { "#{@block['block_type'].downcase}".to_sym => @block }
-  .metadata
-    = partial "representations/metadata", :locals => { :block => @block }
