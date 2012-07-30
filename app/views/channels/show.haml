@@ -4,6 +4,12 @@
   .thumbs
     - @blocks.each do |block|
       .thumb{ :class => block['block_type'].downcase }
-        = link_to url_for(:blocks, :show, :id => slug_encode(block['id'].to_s)), :class => 'area' do
-          / Area
+        / Permalink
+        - unless block_is_text?(block)
+          = link_to url_for(:blocks, :show, :id => slug_encode(block['id'].to_s)), :class => 'area' do
+            / Clickable area
+        - else
+          = link_to '#', url_for(:blocks, :show, :id => slug_encode(block['id'].to_s)), :class => 'permalink'
+
+        / Render representation
         = partial "representations/thumbs/#{block['block_type'].downcase}", :locals => { "#{block['block_type'].downcase}".to_sym => block }
