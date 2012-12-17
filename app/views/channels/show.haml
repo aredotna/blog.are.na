@@ -1,15 +1,28 @@
-= partial 'layouts/navigation', :locals => { :channels => @channels }
+= partial 'layouts/navigation'
 
 - content_for :main do
-  .thumbs
-    - @blocks.each do |block|
-      .thumb{ :class => render_full_or_thumb_class(@blocks, block) }
-        / Permalink
-        - unless block_is_text?(block)
-          = link_to url_for(:blocks, :show, :id => slug_encode(block['id'].to_s)), :class => 'area' do
-            / Clickable area
-        - else
-          = link_to '#', url_for(:blocks, :show, :id => slug_encode(block['id'].to_s)), :class => 'permalink'
+  .posts
+    - @channel.contents.each do |post|
+      .post
+        - if is_channel?(post)
+          %h2= link_to post.title, slug_encode(post.slug)
 
-        / Render representation
-        = partial "representations/#{render_full_or_thumb_path(@blocks.size)}/#{block['block_type'].downcase}", :locals => { "#{block['block_type'].downcase}".to_sym => block }
+        - else
+          %h2= link_to post.generated_title, "view/#{slug_encode(post.id.to_s)}"
+          - if post.has_embed?
+            = post.embed.html
+          - elsif post.has_image?
+            = link_to post.image.original.url, target: '_blank' do
+              = image_tag post.image.display.url
+          - else
+            = post.content_html
+
+        .metadata
+          .added
+            = "Originally added #{time_ago_in_words(post.created_at)} ago"
+            = "by #{post.user.username}"
+
+          - if is_block?(post)
+            .connected
+              = "Connected at #{time_ago_in_words(post.connected_at)} ago"
+              = "by #{post.connected_by_username || post.user.username}"

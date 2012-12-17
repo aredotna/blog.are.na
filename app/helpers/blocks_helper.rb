@@ -1,25 +1,21 @@
 # Helper methods defined here can be accessed in any controller or view in the application
 
-Jtt.helpers do
+App.helpers do
+  def selected_class(block)
+    block.selected ? "selected" : "not-selected"
+  end
+
   def image_proxy_path(src, dimensions='900x900')
-    "http://d2ss1gpcas6f9e.cloudfront.net/?resize=#{dimensions}%3E&src=#{src}"
-  end
-
-  def render_full_or_thumb(size)
-    size > CHANNEL_SIZE_THRESHOLD
-  end
-
-  def render_full_or_thumb_path(size)
-    render_full_or_thumb(size) ? "thumbs" : "full"
-  end
-
-  def render_full_or_thumb_class(blocks, block)
-    render_full_or_thumb(blocks.size) ? block['block_type'] : 'full'
+    "http://d2ss1gpcas6f9e.cloudfront.net/q/resize/#{dimensions}%3E/src/#{CGI.escape(src)}"
   end
 
   BLOCK_TYPES.each do |type|
-    define_method "block_is_#{type}?" do |block|
-      block['block_type'] == type.to_s.capitalize
+    define_method "is_#{type}?" do |block|
+      block._class == type.to_s.capitalize
     end
+  end
+
+  def is_block?(block)
+    block._base_class == "Block"
   end
 end

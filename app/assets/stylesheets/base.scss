@@ -4,27 +4,29 @@
 // ----
 * { @include border-box; }
 
-@mixin selection { background:#000; color:#eee; text-shadow:none; }
+@mixin selection { background: #000; color: #eee; text-shadow: none; }
 ::-moz-selection { @include selection; }
 ::selection { @include selection; }
 
 body {
   margin: 0;
   padding: 0;
-  background: #eee;
-  color: $magenta;
+  background: #fff;
+  color: #000;
   font-family: $sans;
   font-size: $font-size;
   line-height: $unit;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
   text-decoration: none;
-  color: $green;
+  color: #000036;
 }
 
-object, embed, iframe, img {
+object,
+embed,
+iframe,
+img {
   margin: 0;
   vertical-align: bottom;
 }
@@ -37,209 +39,6 @@ blockquote {
 
 // STRUCTURE
 // ---------
-#container {
-  height: 100%;
-
-  #main {
-    padding: $unit*4 $unit;
-    height: 100%;
-    width: 100%;
-    display: table;
-
-    .middle {
-      display: table-cell;
-      height: 100%;
-      width: 100%;
-      vertical-align: middle;
-
-      &.sun_1 { background: transparent url('sun_01.png') center center no-repeat; background-attachment: fixed; }
-      &.sun_2 { background: transparent url('sun_02.png') center center no-repeat; background-attachment: fixed; }
-      &.sun_3 { background: transparent url('sun_03.png') center center no-repeat; background-attachment: fixed; }
-    }
-  }
-}
-
-#toggle {
-  position: fixed;
-  top: $unit;
-  right: $unit;
-}
-
-#navigation {
-  position: fixed;
-  right: 0;
-  top: 0;
-  left: 0;
-  padding: 0;
-  z-index: 100;
-  background: $magenta;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  font-size: 0;
-
-  a {
-    display: inline-block;
-    padding: $unit;
-    color: #fff;
-    font-size: $font-size;
-    font-weight: 700;
-
-    &:hover {
-      text-decoration: underline;
-      background-color: $green;
-    }
-
-    &.home {
-      background-color: $green;
-    }
-  }
-}
-
-.thumbs {
-  width: 100%;
-  font-size: 0;
-  text-align: center;
-
-  .thumb {
-    display: inline-block;
-    width: 240px;
-    height: 240px;
-    position: relative;
-    vertical-align: top;
-    border: 2px solid transparent;
-
-    &:hover {
-      border-color: $green;
-    }
-
-    &:focus {
-      border-color: $magenta;
-    }
-
-    // Clickable area
-    .area {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    // Individual permalink anchor
-    .permalink {
-      display: block;
-      position: absolute;
-      top: $unit;
-      right: $unit;
-    }
-
-    .inner {
-      display: table;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      vertical-align: middle;
-
-      .middle {
-        display: table-cell;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        vertical-align: middle;
-
-        img {
-
-        }
-      }
-    }
-
-    &.text, &.full {
-      @include clearfix;
-      display: block;
-      width: 75%;
-      height: inherit;
-      margin: $unit*2 auto;
-      padding: $unit;
-    }
-
-    &.media:after {
-      content: ' ';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: -8px;
-      margin-top: -5px;
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 16px solid $green;
-    }
-  }
-}
-
-.representation.text {
-  width: 75%;
-  margin: auto;
-}
-
-.metadata {
-  width: 75%;
-  margin: $unit auto;
-}
-
-.title {
-  margin: $unit 0;
-  font-size: $font-size + 2;
-  font-weight: 500;
-  text-align: left;
-}
-
-// General text formating
-.text, .description {
-  font-family: $serif;
-  font-size: $font-size + 2;
-  line-height: $unit + 2;
-  text-align: left;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-.source {
-  margin: $unit 0;
-
-  a {
-    text-decoration: underline;
-  }
-}
-
-
-// Inline and block code styles
-code,
-pre {
-  font-family: monospace;
-  font-size: $font-size - 2;
-  line-height: $unit - 5;
-}
-
-pre {
-  display: block;
-  padding: $unit;
-  margin: $unit 0;
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-  white-space: pre-wrap;
-  background-color: #f5f5f5;
-  border: 1px solid rgba(0,0,0,.15);
-
-  code {
-    padding: 0;
-    color: inherit;
-    background-color: transparent;
-    border: 0;
-  }
-}
 
 // UTIL
 // ----

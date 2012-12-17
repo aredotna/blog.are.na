@@ -1,4 +1,4 @@
-Jtt.helpers do
+App.helpers do
 
   # Not using this ATM... but fun.
   def rot(string)

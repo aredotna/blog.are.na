@@ -11,7 +11,7 @@ gem 'coffee-script'
 gem 'sass'
 gem 'haml'
 
-gem 'arena'
+gem 'arena', '0.0.6'
 gem 'encryptor'
 
 # Padrino Stable Gem
