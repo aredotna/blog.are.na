@@ -25,4 +25,4 @@
           - if is_block?(post)
             .connected
               = "Connected at #{time_ago_in_words(post.connected_at)} ago"
-              = "by #{post.connected_by_username || post.user.username}"
+              = "by #{post.connected_by.username}"
