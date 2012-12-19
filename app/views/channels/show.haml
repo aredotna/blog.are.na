@@ -8,7 +8,8 @@
           %h2= link_to post.title, slug_encode(post.slug)
 
         - else
-          %h2= link_to post.generated_title, "view/#{slug_encode(post.id.to_s)}"
+          - if post.title
+            %h2= link_to post.title, "view/#{slug_encode(post.id.to_s)}"
           - if post.has_embed?
             = post.embed.html
           - elsif post.has_image?
