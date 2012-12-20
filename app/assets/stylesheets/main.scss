@@ -22,15 +22,24 @@ body {
   left: 0px;
 }
 
+.logo {
+  margin-top: 40px;
+  text-align: center;
+  img {
+    width: 40px;
+    height: auto;
+  }
+}
+
 #navigation {
   position: fixed;
   top: 0px;
-  left: 0px;
+  right: 0px;
   width: $navWidth;
   height: 100%;
   background-color: $navColor;
   color: $navTextColor;
-  border-right: $navBorder;
+  border-left: $navBorder;
 
   ul {
     font-size: 20px;
@@ -54,7 +63,7 @@ body {
 
 #main {
 
-  margin-left: $navWidth;
+  margin-right: $navWidth;
   padding-bottom: 200px;
 
   h1 {
