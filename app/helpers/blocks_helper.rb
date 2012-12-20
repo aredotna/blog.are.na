@@ -18,4 +18,13 @@ App.helpers do
   def is_block?(block)
     block._base_class == "Block"
   end
+
+  def item_class(item)
+    item_class = ""
+    if item.slug == @post.slug
+      item_class << " selected"
+    end
+    item_class
+  end
+
 end

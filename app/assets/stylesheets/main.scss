@@ -10,7 +10,7 @@ $lightTextColor: #AAA;
 
 body {
   font-family: $serif;
-  font-size: 20px;
+  font-size: 20px; 
   line-height: 30px;
 }
 
@@ -40,9 +40,8 @@ body {
       position: relative;
       padding: 30px 18px;
       border-bottom: $navBorder;
-      &:hover {
-        background-color: black;
-        color: white;
+      &:hover, &.selected {
+        background-color: #EEE;
       }
     }
   }
@@ -114,5 +113,5 @@ body {
     margin-top: 10px;
     color: $lightTextColor;
   }
-  
+
 }
