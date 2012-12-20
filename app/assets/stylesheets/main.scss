@@ -1,5 +1,5 @@
 $navWidth: 250px;
-$postWidth: 500px;
+$postWidth: 550px;
 
 $navTextColor: black;
 $navColor: white;
@@ -78,7 +78,7 @@ body {
   }
 
   .posts {
-    width: 500px;
+    width: $postWidth;
     margin: 0 auto;
   }
 
