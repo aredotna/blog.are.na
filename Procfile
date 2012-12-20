@@ -1,1 +1,1 @@
-web: padrino start -p 9999
+web: padrino start -p $PORT
