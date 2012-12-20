@@ -1,29 +1,25 @@
 = partial 'layouts/navigation'
 
 - content_for :main do
+  %h1= @post.title
   .posts
-    - @channel.contents.each do |post|
-      .post
+    - @post.contents.each do |post|
+      .post{:class=>post._class}
         - if is_channel?(post)
           %h2= link_to post.title, slug_encode(post.slug)
 
         - else
           - if post.title
-            %h2= link_to post.title, "view/#{slug_encode(post.id.to_s)}"
+            %h2= post.title
           - if post.has_embed?
             = post.embed.html
           - elsif post.has_image?
-            = link_to post.image.original.url, target: '_blank' do
-              = image_tag post.image.display.url
+            .post-image
+              = link_to post.image.original.url, target: '_blank' do
+                = image_tag post.image.display.url
           - else
             = post.content_html
 
-        .metadata
-          .added
-            = "Originally added #{time_ago_in_words(post.created_at)} ago"
-            = "by #{post.user.username}"
-
-          - if is_block?(post)
-            .connected
-              = "Connected at #{time_ago_in_words(post.connected_at)} ago"
-              = "by #{post.connected_by.username}"
+    .metadata
+      .connected
+        = "#{@post.user.username} #{time_ago_in_words(@post_date)} ago"
