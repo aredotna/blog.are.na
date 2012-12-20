@@ -10,6 +10,7 @@ gem 'padrino-assets'
 gem 'coffee-script'
 gem 'sass'
 gem 'haml'
+gem 'pry'
 
 gem 'arena', git: 'git://github.com/arenahq/arena-rb.git'
 gem 'encryptor'
