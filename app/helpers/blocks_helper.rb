@@ -19,6 +19,10 @@ App.helpers do
     block._base_class == "Block"
   end
 
+  def post_date
+    @menu.contents.select {|m| m.slug == @post.slug}.first.connected_at
+  end
+
   def item_class(item)
     item_class = ""
     if item.slug == @post.slug
