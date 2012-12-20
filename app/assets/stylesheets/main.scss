@@ -40,6 +40,7 @@ body {
   background-color: $navColor;
   color: $navTextColor;
   border-left: $navBorder;
+  overflow: auto;
 
   ul {
     font-size: 20px;
