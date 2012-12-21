@@ -31,4 +31,27 @@ App.helpers do
     item_class
   end
 
+  def contributors_list
+    main_author = @post.user.full_name
+    author_names = @post.contents.map do |block|
+      block.user.full_name
+    end
+    author_names.reject! {|a| a == main_author}
+    author_names.uniq!
+    comma_separated_list author_names
+  end
+
+  def comma_separated_list(array)
+    case array.length
+    when 0, nil
+      ""
+    when 1
+      array[0]
+    when 2
+      array.join ' and '
+    else 
+      array[array.length - 1].insert(0, 'and ')
+    end
+  end
+
 end

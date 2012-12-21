@@ -76,13 +76,14 @@ body {
   }
 
   .posts {
-    width: $postWidth;
-    margin: 0 auto;
+
   }
 
   .post {
-    margin-bottom: 20px;
+    box-sizing: content-box;
     text-align: justify;
+    width: $postWidth;
+    margin: 0 auto 20px auto;
 
     p {
       margin: 0;
@@ -114,11 +115,30 @@ body {
       text-align: center;
     }
 
+    .connections-preview-content {
+      display: none;
+      position: absolute;
+      left: 0px;
+      padding: 10px 20px;
+      width: 200px;
+      border: $navBorder;
+      border-bottom: none;
+      border-top: none;
+      background-color: white;
+      a {
+        border-bottom: 1px solid black;
+      }
+    }
+
+
   }
+
 
   .metadata {
     margin-top: 10px;
     color: $lightTextColor;
+    width: $postWidth;
+    margin: 0 auto;
   }
 
 }

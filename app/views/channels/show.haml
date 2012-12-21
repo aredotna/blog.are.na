@@ -4,22 +4,35 @@
   %h1= @post.title
   .posts
     - @post.contents.each do |post|
-      .post{:class=>post._class}
-        - if is_channel?(post)
-          %h2= link_to post.title, slug_encode(post.slug)
+      .post-container
+        .post{:class=>post._class}
+          - if is_channel?(post)
+            %h2= link_to post.title, slug_encode(post.slug)
 
-        - else
-          - if post.title
-            %h2= post.title
-          - if post.has_embed?
-            = post.embed.html
-          - elsif post.has_image?
-            .post-image
-              = link_to post.image.original.url, target: '_blank' do
-                = image_tag post.image.display.url
           - else
-            = post.content_html
+            - if post.title
+              %h2= post.title
+            - if post.has_embed?
+              = post.embed.html
+            - elsif post.has_image?
+              .post-image
+                = link_to post.image.original.url, target: '_blank' do
+                  = image_tag post.image.display.url
+            - else
+              = post.content_html
+          - if post.connections.length > 0 
+            .connections-preview-content
+              .header
+                Also used in
+                .other-channels
+                  - post.connections.each do |connection|
+                    %li
+                      %a{:href=>"http://are.na/#{connection.slug}", :target=>"_blank"}= connection.title
+
 
     .metadata
       .connected
-        = "#{@post.user.username} #{time_ago_in_words(post_date)} ago"
+        Posted by #{@post.user.username}<br>
+        Contributions by #{contributors_list}
+        %br
+        #{time_ago_in_words(post_date)} ago
