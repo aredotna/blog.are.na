@@ -4,7 +4,7 @@ $(document).ready(function(){
     content = $(this).find('.connections-preview-content')
     
     content.css({
-      top: $(this).position().top + $('#main').scrollTop() - 10
+      // top: $(this).position().top + $('#main').scrollTop() - 10
     })
 
     content.show()

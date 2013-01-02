@@ -91,6 +91,8 @@ body {
     text-align: justify;
     width: $postWidth;
     margin: 0 auto 20px auto;
+    padding: 0px 20px;
+    border: 1px solid white;
 
     p {
       margin: 0;
@@ -120,15 +122,17 @@ body {
       text-align: center;
     }
 
+    &:hover {
+      border-left: 1px solid #EEE;
+    }
+
     .connections-preview-content {
       display: none;
-      position: absolute;
-      left: 0px;
+      position: fixed;
+      top: 10px;
+      left: 10px;
       padding: 10px 20px;
       width: 200px;
-      border: $navBorder;
-      border-bottom: none;
-      border-top: none;
       background-color: white;
       a {
         border-bottom: 1px solid black;
@@ -164,6 +168,17 @@ body {
   .arena-info {
     width: $postWidth;
     margin: 0 auto;
+    text-align: center;
+    .arena-logo {
+    }
+    .arena-logo img {
+      width: 30px;
+      margin-bottom: 20px;
+      height: auto;
+    }
+    .visitLink {
+      margin-top: 20px;
+    }
     .visitLink a {
       border-bottom: 1px solid white;
     }
