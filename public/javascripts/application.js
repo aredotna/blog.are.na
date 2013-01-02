@@ -8,19 +8,26 @@ $(document).ready(function(){
     content.removeClass('current')
   })
 
+  var scrollTimer = null
+
   $('#main').scroll(function(){
-    $('.connections-preview-content.current').each(function(){
-      var cont = $(this).closest('.post-container')
-      if (cont.position().top > 0) {
-        $(this).css({
-          top: 0
+    if (!scrollTimer){
+      scrollTimer = setTimeout(function(){
+        $('.connections-preview-content.current').each(function(){
+          var cont = $(this).closest('.post-container')
+          if (cont.position().top > 0) {
+            $(this).css({
+              position: 'absolute'
+            })
+          } else {
+            $(this).css({
+              position: 'fixed'
+            })
+          }
         })
-      } else {
-        $(this).css({
-          top: -$(cont).position().top
-        })
-      }
-    })
+        scrollTimer = false;
+      }, 20)
+    }
   })
 
   // $('#main').scroll(function(){
