@@ -25,7 +25,7 @@ App.helpers do
 
   def next_post_link 
     if @next_post
-      "<a href='/#{@next_post.slug}'>#{@next_post.title} &rarr;</a>"
+      "<a href='/#{@next_post.slug}'>Next: #{@next_post.title} &rarr;</a>"
     end
   end
 
