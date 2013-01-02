@@ -6,21 +6,32 @@
     - @post.contents.each do |post|
       .post-container
         .post{:class=>post._class}
-          - if is_channel?(post)
+
+          - if post._class == "Channel"
             %h2= link_to post.title, post.slug
 
-          - else
-            - if post.title && post.title != ""
-              %h2= post.title
-            - if post.has_embed?
-              = post.embed.html
-            - elsif post.has_image?
-              .post-image
-                = link_to post.image.original.url, target: '_blank' do
-                  = image_tag post.image.display.url
-                = post.content_html
-            - else
-              = post.content_html
+          - if post._class == "Link"
+            = link_to post.title, post.source.url
+
+          - if post._class == "Text"
+            %h2= post.title
+
+          - if post._class == "Embed" || post._class == "Media"
+            %h2= post.title
+            = post.embed.html
+
+          - if post._class == "Attachment"
+            = post.content_html
+            .post-attachment
+              = link_to("Download " + post.attachment.file_name, post.attachment.url)
+
+          - if post._class == "Image"
+            .post-image
+              = link_to post.image.original.url, target: '_blank' do
+                = image_tag post.image.display.url
+        
+          = post.content_html
+
           - if post.connections.length > 0 
             .connections-preview-content
               .header
