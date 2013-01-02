@@ -71,6 +71,16 @@ $page-width:  800px;
           box-sizing: content-box;
 }
 
+@mixin hyphenate {
+  hyphens:auto;
+  text-align:justify;
+  -webkit-hyphens:auto;
+  -webkit-hyphenate-character:"\2010";
+  -webkit-hyphenate-limit-after:1;
+  -webkit-hyphenate-limit-before:3;
+  -moz-hyphens:auto;
+}
+
 @mixin background-size($size){
   -webkit-background-size: $size;
      -moz-background-size: $size;
