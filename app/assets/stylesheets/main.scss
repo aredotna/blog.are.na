@@ -1,3 +1,5 @@
+@import "mixins";
+
 $navWidth: 250px;
 $postWidth: 550px;
 
@@ -87,7 +89,7 @@ body {
   }
 
   .post {
-    box-sizing: content-box;
+    @include content-box;
     text-align: justify;
     width: $postWidth;
     margin: 0 auto 20px auto;
