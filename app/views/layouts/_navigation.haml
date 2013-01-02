@@ -6,4 +6,4 @@
         = item.title
         %span.post-date
           &ndash; #{time_ago_in_words(item.connected_at)} ago
-        =link_to '', slug_encode(item.slug), :class=>"bgLink" 
+        =link_to '', item.slug, :class=>"bgLink" 

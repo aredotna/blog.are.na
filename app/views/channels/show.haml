@@ -7,7 +7,7 @@
       .post-container
         .post{:class=>post._class}
           - if is_channel?(post)
-            %h2= link_to post.title, slug_encode(post.slug)
+            %h2= link_to post.title, post.slug
 
           - else
             - if post.title
