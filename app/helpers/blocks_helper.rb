@@ -43,6 +43,17 @@ App.helpers do
     channel.contents[index]
   end
 
+  def connections_list(post)
+    html = ""
+    post.connections[0..2].each do |connection|
+      html << "<li><a href='http://are.na/#{connection.slug}' target='blank'>#{connection.title}</a></li>"
+    end
+    if post.connections.length > 3
+      html << "<li><a href='http://are.na/show/#{post.id}' target='_blank'>And #{post.connections.length - 3} more...</a></li>"
+    end
+    html
+  end
+
   def contributors_list
     main_author = @post.user
     authors = @post.contents.map do |block|

@@ -43,9 +43,7 @@
                 .header
                   Also used in
                   .other-channels
-                    - post.connections.each do |connection|
-                      %li
-                        %a{:href=>"http://are.na/#{connection.slug}", :target=>"_blank"}= connection.title
+                    =connections_list(post)
 
 
     .metadata
