@@ -71,7 +71,7 @@ body {
   left: 0px;
   height: 100%;
   overflow: auto;
-  
+
   h1 {
     width: $postWidth;
     text-align: center;
@@ -107,8 +107,9 @@ body {
       font-weight: normal;
       margin: 0;
       margin-bottom: 20px;
-      margin-top: 40px;
-      text-align: center;
+      text-align: left;
+      display: inline-block;
+      border-bottom: 1px solid black;
     }
 
     &.Image {
@@ -136,6 +137,20 @@ body {
 
   }
 
+
+  .metadata {
+    margin-top: 10px;
+    color: $lightTextColor;
+    width: $postWidth;
+    margin: 0 auto;
+  }
+
+  .next-post-link {
+    width: $postWidth;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
   .arena-info-container {
     background-color: #000063;
     padding: 40px 0px;
@@ -155,11 +170,5 @@ body {
   }
 
 
-  .metadata {
-    margin-top: 10px;
-    color: $lightTextColor;
-    width: $postWidth;
-    margin: 0 auto;
-  }
 
 }
