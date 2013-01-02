@@ -34,8 +34,7 @@
       .connected
         Posted by 
         %a{:href=>"http://are.na/#{@post.user.slug}"}#{@post.user.username}<br>
-        Contributions by #{contributors_list}
-        %br
+        = contributors_list
         #{time_ago_in_words(post_date)} ago
 
     .next-post-link= next_post_link

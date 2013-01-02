@@ -53,7 +53,12 @@ App.helpers do
     author_names = authors.map do |a|
       "<a href='http://are.na/#{a.slug}'>#{a.full_name}</a>"
     end
-    comma_separated_list author_names
+    list = comma_separated_list(author_names)
+    if list != ""
+      "Contributions by #{list}<br>"
+    else
+      ""
+    end
   end
 
   def comma_separated_list(array)
