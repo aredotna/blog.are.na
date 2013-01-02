@@ -23,12 +23,24 @@ App.helpers do
     @menu.contents.select {|m| m.slug == @post.slug}.first.connected_at
   end
 
+  def next_post_link 
+    if @next_post
+      "<a href='/#{@next_post.slug}'>#{@next_post.title} &rarr;</a>"
+    end
+  end
+
   def item_class(item)
     item_class = ""
     if item.slug == @post.slug
       item_class << " selected"
     end
     item_class
+  end
+
+  def next_block(channel, current_block)
+    index = channel.contents.index {|b| b.id == current_block.id}
+    index = index + 1
+    channel.contents[index]
   end
 
   def contributors_list
