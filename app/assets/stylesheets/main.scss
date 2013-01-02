@@ -18,7 +18,7 @@ body {
   font-family: $serif;
   font-size: 20px; 
   word-spacing: -1px;
-  line-height: 30px;
+  line-height: 28px;
 }
 
 .bgLink {
@@ -84,20 +84,31 @@ body {
     margin: 60px auto;
   }
 
-  .posts {
-
+  .post-container {
+    position: relative;
+    &:hover{ 
+      .post {
+        border-left: 1px solid #EEE;
+      }
+    }
   }
 
   .post {
     @include content-box;
-    text-align: justify;
     width: $postWidth;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 0px auto;
     padding: 0px 20px;
     border: 1px solid white;
 
     p {
+      @include hyphenate;
       margin: 0;
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    li {
+      list-style: disc;
     }
 
     img {
@@ -110,27 +121,30 @@ body {
       font-size: inherit;
       font-weight: normal;
       margin: 0;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       text-align: left;
       display: inline-block;
-      border-bottom: 1px solid black;
+      font-weight: bold;
+      margin-top: 7px;
     }
 
     &.Image {
       margin-top: 32px;
+      h2 {
+        display: none;
+      }
+      p {
+        color: $lightTextColor;
+      }
     }
 
     .post-image {
       text-align: center;
     }
 
-    &:hover {
-      border-left: 1px solid #EEE;
-    }
-
     .connections-preview-content {
       display: none;
-      position: fixed;
+      position: absolute;
       top: 10px;
       left: 10px;
       padding: 10px 20px;
@@ -139,22 +153,28 @@ body {
       a {
         border-bottom: 1px solid black;
       }
+      li {
+        list-style: none;
+      }
+      &.current {
+        display: block;
+      }
     }
 
   }
 
 
   .metadata {
-    margin-top: 10px;
     color: $lightTextColor;
     width: $postWidth;
     margin: 0 auto;
+    margin-top: 28px;
   }
 
   .next-post-link {
     width: $postWidth;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 14px;
   }
 
   .arena-info-container {
