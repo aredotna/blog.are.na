@@ -130,7 +130,24 @@ body {
       }
     }
 
+  }
 
+  .arena-info-container {
+    background-color: #000063;
+    padding: 40px 0px;
+    color: white;
+    margin-top: 125px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .arena-info {
+    width: $postWidth;
+    margin: 0 auto;
+    .visitLink a {
+      border-bottom: 1px solid white;
+    }
   }
 
 
