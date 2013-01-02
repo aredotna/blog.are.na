@@ -14,11 +14,11 @@
             = link_to post.title, post.source.url
 
           - if post._class == "Text"
-            - if post.title != ""
+            - if post.title && post.title != ""
               %h2= post.title
 
           - if post._class == "Embed" || post._class == "Media"
-            - if post.title != ""
+            - if post.title && post.title != ""
               %h2= post.title
             .post-media
               = post.embed.html
