@@ -127,9 +127,12 @@ body {
       margin: 0;
       margin-bottom: 14px;
       text-align: left;
+      font-weight: bold;
       display: inline-block;
-      margin-top: 14px;
-      font-size: 26px;
+    }
+
+    blockquote {
+      border-left-color: $lightTextColor;
     }
 
     &.Image {
@@ -150,15 +153,16 @@ body {
     .connections-preview-content {
       display: none;
       position: absolute;
-      top: 00px;
+      top: 0px;
       left: 10px;
-      padding: 0px 20px;
+      padding: 10px 20px;
       width: 200px;
       background-color: white;
       a {
         border-bottom: 1px solid black;
       }
       li {
+        margin-top: 7px;
         list-style: none;
       }
       &.current {
