@@ -18,15 +18,16 @@
 
           - if post._class == "Embed" || post._class == "Media"
             %h2= post.title
-            = post.embed.html
+            .post-media
+              = post.embed.html
 
           - if post._class == "Attachment"
             = post.content_html
-            .post-attachment
+            .post-media
               = link_to("Download " + post.attachment.file_name, post.attachment.url)
 
           - if post._class == "Image"
-            .post-image
+            .post-media.post-image
               = link_to post.image.original.url, target: '_blank' do
                 = image_tag post.image.display.url
         
