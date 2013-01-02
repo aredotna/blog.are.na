@@ -6,11 +6,11 @@ $(document).ready(function(){
       top: $(this).offset().top - 10
     })
 
-    content.fadeIn(100)
+    content.show()
 
   }, function(){
     content = $(this).find('.connections-preview-content')
-    content.fadeOut(250);
+    content.hide()
   })
 
 })
