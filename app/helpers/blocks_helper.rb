@@ -44,12 +44,15 @@ App.helpers do
   end
 
   def contributors_list
-    main_author = @post.user.full_name
-    author_names = @post.contents.map do |block|
-      block.user.full_name
+    main_author = @post.user
+    authors = @post.contents.map do |block|
+      block.user
     end
-    author_names.reject! {|a| a == main_author}
-    author_names.uniq!
+    authors.reject! {|a| a.slug == main_author.slug}
+    authors.uniq! {|a| a.slug}
+    author_names = authors.map do |a|
+      "<a href='http://are.na/#{a.slug}'>#{a.full_name}</a>"
+    end
     comma_separated_list author_names
   end
 

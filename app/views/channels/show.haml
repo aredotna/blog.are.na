@@ -32,7 +32,8 @@
 
     .metadata
       .connected
-        Posted by #{@post.user.username}<br>
+        Posted by 
+        %a{:href=>"http://are.na/#{@post.user.slug}"}#{@post.user.username}<br>
         Contributions by #{contributors_list}
         %br
         #{time_ago_in_words(post_date)} ago
