@@ -100,6 +100,10 @@ body {
     padding: 0px 20px;
     border: 1px solid white;
 
+    a {
+      border-bottom: 1px solid black;
+    }
+
     p {
       @include hyphenate;
       margin: 0;
@@ -140,6 +144,10 @@ body {
 
     .post-image {
       text-align: center;
+    }
+
+    .post-media {
+      margin-bottom: 14px;
     }
 
     .connections-preview-content {
