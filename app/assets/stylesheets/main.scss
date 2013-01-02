@@ -8,6 +8,10 @@ $navBorder: 1px solid #EEE;
 $serif: "Times New Roman", times;
 $lightTextColor: #AAA;
 
+html, body {
+  height : 100%;
+}
+
 body {
   font-family: $serif;
   font-size: 20px; 
@@ -62,9 +66,12 @@ body {
 
 #main {
 
-  margin-right: $navWidth;
-  padding-bottom: 200px;
-
+  position: fixed;
+  right: $navWidth;
+  left: 0px;
+  height: 100%;
+  overflow: auto;
+  
   h1 {
     width: $postWidth;
     text-align: center;
@@ -100,11 +107,8 @@ body {
       font-weight: normal;
       margin: 0;
       margin-bottom: 20px;
-      margin-top: 20px;
-      display: inline-block;
-      &:first-child {
-        margin-top: 0px;
-      }
+      margin-top: 40px;
+      text-align: center;
     }
 
     &.Image {
