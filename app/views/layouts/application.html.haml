@@ -7,6 +7,7 @@
     = javascript_include_tag "/javascripts/application.js"
     :javascript
       try{Typekit.load();}catch(e){}
+    %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"News", :href=>"/rss"}
   %body
     #container
       %nav#navigation
