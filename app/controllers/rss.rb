@@ -1,7 +1,7 @@
 App.controllers :rss do
 
   get :index, map: "/rss", cache: true  do
-    expires_in 3600
+    expires_in 36000
     blog_channel = Arena.channel(DEFAULT_CHANNEL_IDENTIFIER, { sort: 'created_at', direction: 'desc', per: 20})
     blog_posts = blog_channel.contents
     @posts = blog_posts.map do |p|
