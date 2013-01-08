@@ -12,6 +12,8 @@ gem 'sass'
 gem 'haml'
 gem 'pry'
 
+gem 'redis'
+
 gem 'arena', git: 'git://github.com/arenahq/arena-rb.git'
 gem 'encryptor'
 
