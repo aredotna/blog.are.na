@@ -1,0 +1,13 @@
+!!! XML
+%rss{:version => "2.0", "xmlns:atom" => "http://www.w3.org/2005/Atom"}
+  %channel
+    %title Arena Blog
+    %link http://blog.are.na
+    %description News and features 
+    <atom:link href="http://blog.are.na/rss" rel="self" type="application/rss+xml" />
+    - @posts.each do |post|
+      %item
+        %title= post[:post_channel].title
+        %link http://blog.are.na/#{post[:post_channel].slug}
+        %description
+          = partial :'feed/post', :locals=>{:post=>post[:post_channel]}
