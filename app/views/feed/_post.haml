@@ -28,11 +28,3 @@
       = link_to item.image.original.url, target: '_blank' do
         = image_tag item.image.display.url
       = item.content_html
-
-  - unless item._class == "Channel"
-    - if item.connections && item.connections.length > 0 
-      .connections-preview-content
-        .header
-          Also used in
-          .other-channels
-            =connections_list(item)
