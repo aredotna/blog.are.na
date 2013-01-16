@@ -16,7 +16,7 @@
           - if post._class == "Text"
             - if post.title && post.title != ""
               %h2= post.title
-              =post.content_html
+            =post.content_html
 
           - if post._class == "Embed" || post._class == "Media"
             - if post.title && post.title != ""
@@ -30,12 +30,12 @@
               = link_to("Download " + post.attachment.file_name, post.attachment.url)
 
           - if post._class == "Image"
-            - if post.title && post.title != ""
-              %h2= post.title
             .post-media.post-image
               = link_to post.image.original.url, target: '_blank' do
                 = image_tag post.image.display.url
-              = post.content_html
+              .caption
+                %span.title= post.title
+                = post.content_html
 
           - unless post._class == "Channel"
             - if post.connections && post.connections.length > 0 

@@ -83,14 +83,8 @@ body {
     line-height: 44px;
     margin: 60px auto;
   }
-
   .post-container {
     position: relative;
-    &:hover{ 
-      .post {
-        border-left: 1px solid #EEE;
-      }
-    }
   }
 
   .post {
@@ -137,8 +131,11 @@ body {
 
     &.Image {
       margin-top: 32px;
-      p {
+      .caption {
         color: $lightTextColor;
+      }
+      a {
+        border-bottom: none;
       }
     }
 
@@ -155,7 +152,7 @@ body {
       position: absolute;
       top: 0px;
       left: 10px;
-      padding: 10px 20px;
+      padding: 0px 20px;
       width: 200px;
       background-color: white;
       a {
