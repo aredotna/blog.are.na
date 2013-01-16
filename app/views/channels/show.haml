@@ -35,7 +35,6 @@
                 = image_tag post.image.display.url
               .caption
                 %span.title= post.title
-                = post.description_html
 
           - unless post._class == "Channel"
             - if post.connections && post.connections.length > 0 
