@@ -82,6 +82,7 @@ App.helpers do
       array.join ' and '
     else 
       array[array.length - 1].insert(0, 'and ')
+      array.join(', ')
     end
   end
 
