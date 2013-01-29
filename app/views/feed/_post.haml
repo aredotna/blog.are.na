@@ -1,0 +1,30 @@
+- post.contents.each do |item|
+  - if item._class == "Channel"
+    %h2= link_to item.title, item.slug
+
+  - if item._class == "Link"
+    = link_to item.title, item.source.url
+
+  - if item._class == "Text"
+    - if item.title && item.title != ""
+      %h2= item.title
+      =item.content_html
+
+  - if item._class == "Embed" || item._class == "Media"
+    - if item.title && item.title != ""
+      %h2= item.title
+    .item-media
+      = item.embed.html
+
+  - if item._class == "Attachment"
+    = item.content_html
+    .item-media
+      = link_to("Download " + item.attachment.file_name, item.attachment.url)
+
+  - if item._class == "Image"
+    - if item.title && item.title != ""
+      %h2= item.title
+    .item-media.item-image
+      = link_to item.image.original.url, target: '_blank' do
+        = image_tag item.image.display.url
+      = item.content_html

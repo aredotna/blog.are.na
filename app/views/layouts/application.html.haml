@@ -1,0 +1,33 @@
+%html
+  %head
+    = stylesheet_link_tag "application"
+    %title Arena Blog
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    = javascript_include_tag "//use.typekit.net/bmy7ezc.js"
+    = javascript_include_tag "/javascripts/application.js"
+    :javascript
+      try{Typekit.load();}catch(e){}
+    %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"Arena Blog", :href=>"/rss/"}
+  %body
+    #container
+      %nav#navigation
+        = yield_content :navigation
+      
+      %section#main
+        .logo 
+          %a{:href=>"/"}
+            %img{:src=>"/assets/mark.png"}
+        .middle
+          = yield_content :main
+
+    :javascript 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38072436-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+

@@ -1,0 +1,61 @@
+/*
+Syntax error: Undefined mixin 'mixins'.
+        on line 1 of /Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss, in `mixins'
+        from line 1 of /Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss
+
+1: @include mixins;
+2: 
+3: // CONSTANTS
+4: // ---------
+5: $unit: 20px;
+6: $magenta:                   #93c;
+
+Backtrace:
+/Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss:1:in `mixins'
+/Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss:1
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:170:in `visit_mixin'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:18:in `visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/tree/root_node.rb:20:in `render'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/engine.rb:300:in `_render'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/engine.rb:247:in `render'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin/compiler.rb:340:in `update_stylesheet'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin/compiler.rb:200:in `each'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sass-3.1.20/lib/sass/plugin/rack.rb:51:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/head.rb:9:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/padrino-core-0.10.7/lib/padrino-core/reloader.rb:250:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/padrino-core-0.10.7/lib/padrino-core/logger.rb:388:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sinatra-1.3.2/lib/sinatra/showexceptions.rb:21:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sinatra-1.3.2/lib/sinatra/base.rb:1334:in `block in call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sinatra-1.3.2/lib/sinatra/base.rb:1416:in `synchronize'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/sinatra-1.3.2/lib/sinatra/base.rb:1334:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/padrino-core-0.10.7/lib/padrino-core/router.rb:83:in `block in call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/padrino-core-0.10.7/lib/padrino-core/router.rb:76:in `each'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/padrino-core-0.10.7/lib/padrino-core/router.rb:76:in `call'
+/Users/damonzucconi/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/Users/damonzucconi/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/damonzucconi/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/damonzucconi/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'mixins'.\A         on line 1 of /Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss, in `mixins'\A         from line 1 of /Users/damonzucconi/Projects/Arena/clients/jtt/app/stylesheets/base.scss\A \A 1: @include mixins;\A 2: \A 3: // CONSTANTS\A 4: // ---------\A 5: $unit: 20px;\A 6: $magenta:                   #93c;"; }

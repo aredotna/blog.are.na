@@ -1,0 +1,115 @@
+// CONSTANTS
+// ---------
+$unit:        20px;
+$sans:        sans-serif;
+$serif:       Times, 'Times New Roman', Georgia, serif;
+$font-size:   14px;
+$line-height: $unit;
+$page-width:  800px;
+
+// UTILS
+// -----
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+@mixin inset-shadow {
+  $shadow: inset 0px 1px 3px #000, inset 0px -1px 1px #000;
+  @include box-shadow($shadow)
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    *display: inline;
+    content: "";
+    zoom: 1;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity: 100) {
+  filter: alpha(opacity=$opacity);
+  -khtml-opacity: $opacity / 100;
+    -moz-opacity: $opacity / 100;
+         opacity: $opacity / 100;
+}
+
+@mixin striped($color,$angle: -45deg) {
+  background-color: $color !important;
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+}
+
+@mixin border-box {
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin content-box {
+     -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+@mixin hyphenate {
+  hyphens:auto;
+  text-align:justify;
+  -webkit-hyphens:auto;
+  -webkit-hyphenate-character:"\2010";
+  -webkit-hyphenate-limit-after:1;
+  -webkit-hyphenate-limit-before:3;
+  -moz-hyphens:auto;
+}
+
+@mixin background-size($size){
+  -webkit-background-size: $size;
+     -moz-background-size: $size;
+       -o-background-size: $size;
+          background-size: $size;
+}
+
+@mixin loading($color: red) {
+  @include striped($color);
+  background-repeat: repeat;
+  @include background-size(40px 40px);
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+     -moz-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Spec
+@keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}

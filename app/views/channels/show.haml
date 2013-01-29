@@ -1,0 +1,66 @@
+= partial 'layouts/navigation'
+
+- content_for :main do
+  %h1= @post.title
+  .posts
+    - @post.contents.each do |post|
+      .post-container
+        .post{:class=>post._class}
+
+          - if post._class == "Channel"
+            %h2= link_to post.title, post.slug
+
+          - if post._class == "Link"
+            = link_to post.title, post.source.url
+
+          - if post._class == "Text"
+            - if post.title && post.title != ""
+              %h2= post.title
+            =post.content_html
+
+          - if post._class == "Embed" || post._class == "Media"
+            - if post.title && post.title != ""
+              %h2= post.title
+            .post-media
+              = post.embed.html
+
+          - if post._class == "Attachment"
+            = post.content_html
+            .post-media
+              = link_to("Download " + post.attachment.file_name, post.attachment.url)
+
+          - if post._class == "Image"
+            .post-media.post-image
+              = link_to post.image.original.url, target: '_blank' do
+                = image_tag post.image.display.url
+              .caption
+                %span.title= post.title
+
+          - unless post._class == "Channel"
+            - if post.connections && post.connections.length > 0 
+              .connections-preview-content
+                .header
+                  Also used in
+                  .other-channels
+                    =connections_list(post)
+
+
+    .metadata
+      .connected
+        Posted by 
+        %a{:href=>"http://are.na/#{@post.user.slug}"}#{@post.user.username}<br>
+        = contributors_list
+        #{time_ago_in_words(post_date)} ago
+
+    .next-post-link= next_post_link
+
+    .arena-info-container
+      .arena-info
+        .arena-logo
+          %img{:src=>"/assets/mark-white.png"}
+        Arena is a collaborative tool for assembling information.<br>
+        As information is created, organized, and reused, it fluidly integrates into multiple contexts that lead to the creation of actionable knowledge.
+        .arena-links
+          %a{:href=>"http://are.na"} Visit Arena
+          &thinsp;
+          %a{:href=>"mailto:everyone@are.na"} Contact Us

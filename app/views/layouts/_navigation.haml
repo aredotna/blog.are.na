@@ -1,0 +1,9 @@
+- content_for :navigation do
+  / = link_to SITE_TITLE, url_for(:channels, :index), :class => 'home'
+  %ul
+    - @menu.contents.each do |item|
+      %li{:class=>item_class(item)}
+        = item.title
+        %span.post-date
+          &ndash; #{time_ago_in_words(item.connected_at)} ago
+        =link_to '', item.slug, :class=>"bgLink" 
